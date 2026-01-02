@@ -40,10 +40,12 @@ img:hover{
 
 </head>
 <body>
-<img src="images\gif2.gif">
+<img src="images/gif2.gif">
+
 <h1>Joke ,Of the Day..!! </h1>
-<h3>🤣<%= request.getParameter("joke")%></h3>
-<form action="MyServlet">
+<h3>🤣 ${joke}</h3>
+
+<form action="MyServlet" method="get">
     <input name="num1" placeholder="First Number"></input>
     <input name="num2" placeholder="Second Number"></input>
     <button name="bt1" value="1"> + </button>
@@ -51,6 +53,6 @@ img:hover{
     <button name="bt1" value="3"> * </button>
     <button name="bt1" value="4"> / </button>
 </form>
-<h2>Ans=<%=request.getParameter("ans")%>🚩</h2>
+<h2>Ans = ${ans} 🚩</h2>
 </body>
 </html>
