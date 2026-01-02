@@ -60,7 +60,13 @@ public class MyServlet extends HttpServlet {
 		 int randomIndex = (int) (Math.random() * jokes.length);
 	     String randomJoke = jokes[randomIndex];
 	     
-		response.sendRedirect("result.jsp?ans="+ans+"&joke="+randomJoke);
+	  // ✅ request attributes
+	     request.setAttribute("ans", ans);
+	     request.setAttribute("joke", randomJoke);
+
+	     // ✅ forward (NOT redirect)
+	     request.getRequestDispatcher("result.jsp").forward(request, response);
+//		response.sendRedirect("result.jsp?ans="+ans+"&joke="+randomJoke);
 	}
 
 	/**
